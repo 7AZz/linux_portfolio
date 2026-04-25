@@ -1,8 +1,40 @@
+import dayjs from "dayjs";
+import { navIcons, navLinks } from "#constants/index";
+
+type NavLink = {
+  id: number | string;
+  name: string;
+};
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <nav>
+      <div>
+        <img src="/images/logo.svg" alt="Logo" height={17} width={14} />
+        <p className="font-bold">Tanveer's Portfolio</p>
 
-export default Navbar
+        <ul>
+          {(navLinks as NavLink[]).map(({ id, name }) => (
+            <li key={id}>
+              <p>{name}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <ul>
+          {navIcons.map(({ id, img }) => (
+            <li key={id}>
+              <img src={img} 
+               alt={`icon-${id}`} />
+            </li>
+          ))}
+        </ul>
+        <time>{dayjs().format("ddd MMM D h:mm A")}</time>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

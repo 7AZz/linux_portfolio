@@ -4,6 +4,13 @@
     "target": "es2023",
     "lib": ["ES2023", "DOM"],
     "module": "esnext",
+    "paths": {
+      "#components/*": ["./src/components/*"],
+      "#constants/*": ["./src/constants/*"],
+      "#store/*": ["./src/store/*"],
+      "#hoc/*": ["./src/hoc/*"],
+      "#windows/*": ["./src/windows/*"]
+    },
     "types": ["vite/client"],
     "skipLibCheck": true,
 
