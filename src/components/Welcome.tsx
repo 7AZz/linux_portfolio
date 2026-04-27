@@ -26,7 +26,7 @@ const renderText = (
 };
 
 const setupTextHover = (container: HTMLElement | null, type: FontWeightKey) => {
-  if (!container) return;
+  if (!container) return () => {};
 
   const letters = container.querySelectorAll("span");
   const { min, max, default: base } = FONT_WEIGHTS[type];
@@ -68,16 +68,16 @@ const setupTextHover = (container: HTMLElement | null, type: FontWeightKey) => {
 };
 
 const Welcome = () => {
-  const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const subtitleRef = useRef<HTMLParagraphElement | null>(null);
 
   useGSAP(() => {
     const titleCleanup = setupTextHover(titleRef.current, "title");
     const subtitleCleanup = setupTextHover(subtitleRef.current, "subtitles");
 
     return () => {
-      titleCleanup?.();
-      subtitleCleanup?.();
+      titleCleanup();
+      subtitleCleanup();
     };
   }, []);
   return (
