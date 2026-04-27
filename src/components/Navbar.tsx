@@ -1,11 +1,6 @@
 import dayjs from "dayjs";
 import { navIcons, navLinks } from "#constants/index";
 
-type NavLink = {
-  id: number | string;
-  name: string;
-};
-
 const Navbar = () => {
   return (
     <nav>
@@ -14,7 +9,7 @@ const Navbar = () => {
         <p className="font-bold">Tanveer's Portfolio</p>
 
         <ul>
-          {(navLinks as NavLink[]).map(({ id, name }) => (
+          {navLinks.map(({ id, name }) => (
             <li key={id}>
               <p>{name}</p>
             </li>
@@ -26,8 +21,7 @@ const Navbar = () => {
         <ul>
           {navIcons.map(({ id, img }) => (
             <li key={id}>
-              <img src={img} 
-               alt={`icon-${id}`} />
+              <img src={img} alt={`icon-${id}`} />
             </li>
           ))}
         </ul>
