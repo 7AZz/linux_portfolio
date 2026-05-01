@@ -9,6 +9,7 @@ import {
   Terminal,
   TextFile,
   ImageFile,
+  Contact,
 } from "#windows/index";
 
 gsap.registerPlugin(Draggable);
@@ -26,6 +27,7 @@ const App = () => {
       <Finder />
       <TextFile />
       <ImageFile />
+      <Contact />
     </main>
   );
 };

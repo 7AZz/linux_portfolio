@@ -50,8 +50,12 @@ body {
     ul {
       @apply flex items-center gap-5 max-sm:hidden;
 
-      p {
-        @apply text-sm cursor-pointer hover:underline transition-all;
+      button {
+        @apply text-sm cursor-pointer hover:underline transition-all bg-transparent border-0 p-0;
+
+        &:focus-visible {
+          @apply outline-none underline;
+        }
       }
     }
 
@@ -327,8 +331,12 @@ body {
           @apply text-gray-700 hover:bg-gray-200;
         }
 
-        li {
-          @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
+        button {
+          @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors w-full text-left;
+
+          &:focus-visible {
+            @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-50;
+          }
         }
       }
     }
@@ -345,6 +353,14 @@ body {
 
         p {
           @apply text-sm text-center font-medium w-40;
+        }
+      }
+
+      .empty-state {
+        @apply static w-full h-full flex items-center justify-center text-gray-500;
+
+        p {
+          @apply text-sm font-medium;
         }
       }
     }
