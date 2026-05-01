@@ -14,8 +14,10 @@ const {openWindow} = useWindowStore();
 
         <ul>
           {navLinks.map(({ id, name, type }) => (
-            <li key={id} onClick={() => openWindow(type)}>
-              <p>{name}</p>
+            <li key={id}>
+              <button type="button" onClick={() => openWindow(type)}>
+                {name}
+              </button>
             </li>
           ))}
         </ul>

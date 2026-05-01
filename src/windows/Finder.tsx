@@ -18,25 +18,41 @@ const Finder = () => {
     openWindow(`${item.fileType}${item.kind}`, item);
   };
 
-  const renderList = (name, items) => (
-    <div>
-      <h3>{name}</h3>
-      <ul>
-        {items.map((item) => (
-          <li
-            key={item.id}
-            onClick={() => setActiveLocation(item)}
-            className={clsx(
-              item.id === activeLocation.id ? "active" : "not-active",
-            )}
-          >
-            <img src={item.icon} className="w-4" alt={item.name} />
-            <p className="text-sm font-medium truncate">{item.name}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+  const renderList = (name, items) => {
+    const safeItems = Array.isArray(items) ? items : [];
+
+    return (
+      <div>
+        <h3>{name}</h3>
+        <ul>
+          {safeItems.map((item) => {
+            const isActive = item.id === activeLocation.id;
+
+            return (
+              <li key={item.id}>
+                <button
+                  type="button"
+                  onClick={() => setActiveLocation(item)}
+                  className={clsx(isActive ? "active" : "not-active")}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  <img src={item.icon} className="w-4" alt={item.name} />
+                  <p className="text-sm font-medium truncate">{item.name}</p>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  };
+
+  const hasChildren = Array.isArray(activeLocation?.children);
+  const contentItems = hasChildren ? activeLocation.children : [];
+  const emptyStateLabel =
+    activeLocation?.kind === "file"
+      ? "This file has no contents."
+      : "This folder is empty.";
 
   return (
     <>
@@ -51,16 +67,22 @@ const Finder = () => {
           {renderList("My Projects", locations.work.children)}
         </div>
         <ul className="content">
-          {activeLocation?.children.map((item) => (
-            <li
-              key={item.id}
-              className={item.position}
-              onClick={() => openItem(item)}
-            >
-              <img src={item.icon} alt={item.name} />
-              <p>{item.name}</p>
+          {contentItems.length > 0 ? (
+            contentItems.map((item) => (
+              <li
+                key={item.id}
+                className={item.position}
+                onClick={() => openItem(item)}
+              >
+                <img src={item.icon} alt={item.name} />
+                <p>{item.name}</p>
+              </li>
+            ))
+          ) : (
+            <li className="empty-state">
+              <p>{emptyStateLabel}</p>
             </li>
-          ))}
+          )}
         </ul>
       </div>
     </>
