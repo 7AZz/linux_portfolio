@@ -10,6 +10,7 @@ import {
   TextFile,
   ImageFile,
   Contact,
+  Home,
 } from "#windows/index";
 
 gsap.registerPlugin(Draggable);
@@ -28,6 +29,7 @@ const App = () => {
       <TextFile />
       <ImageFile />
       <Contact />
+      <Home />
     </main>
   );
 };
