@@ -67,11 +67,6 @@ interface PhotosLink {
   title: string;
 }
 
-interface GalleryItem {
-  id: number;
-  img: string;
-}
-
 interface LocationNodeBase {
   id: number;
   name: string;
@@ -176,7 +171,7 @@ const dockApps: DockApp[] = [
     id: "trash",
     name: "Archive", // was "Trash"
     icon: "trash.png",
-    canOpen: false,
+    canOpen: true,
   },
 ];
 
@@ -291,25 +286,6 @@ const photosLinks: PhotosLink[] = [
   },
 ];
 
-const gallery: GalleryItem[] = [
-  {
-    id: 1,
-    img: "/images/gal1.png",
-  },
-  {
-    id: 2,
-    img: "/images/gal2.png",
-  },
-  {
-    id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
-  },
-];
-
 export {
   navLinks,
   navIcons,
@@ -318,7 +294,6 @@ export {
   techStack,
   socials,
   photosLinks,
-  gallery,
 };
 
 const WORK_LOCATION: LocationRoot = {
