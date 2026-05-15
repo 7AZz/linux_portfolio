@@ -94,10 +94,10 @@ body {
     }
 
     .dock-icon {
-      @apply size-14 3xl:size-20 cursor-pointer;
+      @apply size-14 3xl:size-20 cursor-pointer p-0;
 
       img {
-        @apply object-cover object-center;
+        @apply size-full object-contain object-center;
       }
     }
   }
@@ -348,7 +348,7 @@ body {
         @apply absolute flex items-center flex-col gap-3;
 
         img {
-          @apply object-contain object-center size-16 relative group-hover:scale-105;
+          @apply object-contain object-center size-20 relative group-hover:scale-105;
         }
 
         p {
