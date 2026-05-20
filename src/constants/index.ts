@@ -152,7 +152,7 @@ const dockApps: DockApp[] = [
   {
     id: "safari",
     name: "Articles", // was "Safari"
-    icon: "safari.png",
+    icon: "brave.png",
     canOpen: true,
   },
   {
