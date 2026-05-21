@@ -30,7 +30,7 @@ const App = () => {
       <Contact />
       <Home />
     </main>
-  );
+  );  
 };
 
 export default App;
