@@ -413,25 +413,25 @@ body {
         @apply space-y-1;
 
         .active {
-          @apply bg-blue-100 text-blue-700;
+          @apply bg-white/10 text-[var(--window-text)];
         }
 
         .not-active {
-          @apply text-gray-700 hover:bg-gray-200;
+          @apply text-[var(--window-text-muted)] hover:bg-white/5;
         }
 
         button {
           @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors w-full text-left;
 
           &:focus-visible {
-            @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-50;
+            @apply outline-none ring-1 ring-[var(--window-text-muted)] ring-offset-0;
           }
         }
       }
     }
 
     .content {
-      @apply flex-1 p-8 bg-white max-w-2xl relative;
+      @apply flex-1 p-8 bg-black/10 max-w-2xl relative;
 
       li {
         @apply absolute flex items-center flex-col gap-3;
@@ -441,12 +441,12 @@ body {
         }
 
         p {
-          @apply text-sm text-center font-medium w-40;
+          @apply text-sm text-center font-medium w-40 text-[var(--window-text)];
         }
       }
 
       .empty-state {
-        @apply static w-full h-full flex items-center justify-center text-gray-500;
+        @apply static w-full h-full flex items-center justify-center text-[var(--window-text-muted)];
 
         p {
           @apply text-sm font-medium;
