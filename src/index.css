@@ -153,7 +153,7 @@ body {
           }
 
           .stat-value {
-            @apply text-3xl font-bold text-yellow-500;
+            @apply text-3xl font-bold text-yellow-500!;
           }
         }
       }
@@ -235,7 +235,7 @@ body {
             @apply flex flex-col items-center;
 
             .result-value {
-              @apply text-4xl font-bold text-yellow-500;
+              @apply text-4xl font-bold text-yellow-500!;
             }
 
             .result-label {
