@@ -11,7 +11,7 @@ const Terminal = () => {
       </div>
 
       <div className="techstack flex p-6 gap-10 font-roboto select-none">
-        <pre className="text-blue-600 leading-[1.1] text-xs">
+        <pre className="text-[#87ac99] leading-[1.1] text-xs">
           {`                   -\`
                   .o+\`
                  \`ooo/
@@ -33,28 +33,28 @@ const Terminal = () => {
 
         <div className="flex-1 space-y-1 text-sm">
           <p>
-            <span className="text-blue-600 font-bold">tanveer</span>@
-            <span className="text-blue-600 font-bold">portfolio</span>
+            <span className="text-[#87ac99] font-bold">tanveer</span>@
+            <span className="text-[#87ac99] font-bold">portfolio</span>
           </p>
-          <p className="text-gray-400">-----------------------</p>
+          <p className="opacity-20">-----------------------</p>
           <p>
-            <span className="text-blue-600 font-bold">OS: </span>
+            <span className="text-[#87ac99] font-bold">OS: </span>
             Portfolio x86_64
           </p>
           <p>
-            <span className="text-blue-600 font-bold">Host: </span>
+            <span className="text-[#87ac99] font-bold">Host: </span>
             Tanveer's Portfolio
           </p>
           <p>
-            <span className="text-blue-600 font-bold">Kernel: </span>
+            <span className="text-[#87ac99] font-bold">Kernel: </span>
             2026.06.20
           </p>
           <p>
-            <span className="text-blue-600 font-bold">Uptime: </span>
+            <span className="text-[#87ac99] font-bold">Uptime: </span>
             Always Online
           </p>
           <p>
-            <span className="text-blue-600 font-bold">Packages: </span>
+            <span className="text-[#87ac99] font-bold">Packages: </span>
             {techStack.length} (tech-stacks)
           </p>
          
@@ -64,7 +64,7 @@ const Terminal = () => {
 
           {techStack.map(({ category, items }) => (
             <p key={category}>
-              <span className="text-blue-600 font-bold">{category}: </span>
+              <span className="text-[#87ac99] font-bold">{category}: </span>
               {items.join(", ")}
             </p>
           ))}
