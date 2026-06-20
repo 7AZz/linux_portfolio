@@ -178,7 +178,9 @@ body {
       }
 
       @keyframes cursor-blink {
-        50% { box-shadow: inset 0 -2px 0 transparent; }
+        50% {
+          box-shadow: inset 0 -2px 0 transparent;
+        }
       }
 
       .typing-hint {
@@ -244,7 +246,7 @@ body {
   }
 
   #terminal {
-    @apply w-xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply w-2xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     h2 {
       @apply font-bold text-sm text-center w-full;

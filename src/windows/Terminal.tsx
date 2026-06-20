@@ -1,7 +1,6 @@
 import WindowControls from "#components/WindowControls";
 import { techStack } from "#constants/index";
 import WindowWrapper from "#hoc/WindowWrapper";
-import { Check, Flag } from "lucide-react";
 
 const Terminal = () => {
   return (
@@ -11,41 +10,75 @@ const Terminal = () => {
         <h2>Tech Stack</h2>
       </div>
 
-      <div className="techstack">
-        <p>
-          <span className="font-bold">@tanveer % </span>
-          show tech stack
-        </p>
+      <div className="techstack flex p-6 gap-10 font-roboto select-none">
+        <pre className="text-blue-600 leading-[1.1] text-xs">
+          {`                   -\`
+                  .o+\`
+                 \`ooo/
+                \`+oooo:
+               \`+oooooo:
+               -+oooooo+:
+             \`/:-:++oooo+:
+            \`/++++/+++++++:
+           \`/++++++++++++++:
+          \`/+++ooooooooooooo/\`
+         ./ooosssso++osssssso+\`
+        .oossssso-\`\`\`\`/ossssss+\`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        ossssoooo/
+    /osssssssss/        ossssooooo:
+   \`/osssssssss/        ossssoooooo-`}
+        </pre>
 
-        <div className="label">
-          <p className="w-32">Category</p>
-          <p>Technologies</p>
-        </div>
-
-        <ul className="content">
-          {techStack.map(({ category, items }) => (
-            <li key={category} className="flex items-center">
-              <Check className="check" size={20} />
-              <h3>{category}</h3>
-              <ul>
-                {items.map((item, i) => (
-                  <li key={i}>
-                    {item}
-                    {i < items.length - 1 ? ", " : ""}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-        <div className="footnote">
+        <div className="flex-1 space-y-1 text-sm">
           <p>
-            <Check size={20} /> 5 of 5 stack loaded successfully (100%)
+            <span className="text-blue-600 font-bold">tanveer</span>@
+            <span className="text-blue-600 font-bold">portfolio</span>
           </p>
-          <p className="text-black">
-            <Flag size={20} fill="black" />
-            Render time: 6ms
+          <p className="text-gray-400">-----------------------</p>
+          <p>
+            <span className="text-blue-600 font-bold">OS: </span>
+            Portfolio x86_64
           </p>
+          <p>
+            <span className="text-blue-600 font-bold">Host: </span>
+            Tanveer's Portfolio
+          </p>
+          <p>
+            <span className="text-blue-600 font-bold">Kernel: </span>
+            2026.06.20
+          </p>
+          <p>
+            <span className="text-blue-600 font-bold">Uptime: </span>
+            Always Online
+          </p>
+          <p>
+            <span className="text-blue-600 font-bold">Packages: </span>
+            {techStack.length} (tech-stacks)
+          </p>
+         
+          
+
+          <div className="pt-2" />
+
+          {techStack.map(({ category, items }) => (
+            <p key={category}>
+              <span className="text-blue-600 font-bold">{category}: </span>
+              {items.join(", ")}
+            </p>
+          ))}
+
+          <div className="flex gap-1.5 pt-4">
+            <div className="size-4 bg-gray-900" />
+            <div className="size-4 bg-red-500" />
+            <div className="size-4 bg-green-500" />
+            <div className="size-4 bg-yellow-500" />
+            <div className="size-4 bg-blue-500" />
+            <div className="size-4 bg-purple-500" />
+            <div className="size-4 bg-cyan-500" />
+            <div className="size-4 bg-gray-200" />
+          </div>
         </div>
       </div>
     </>
