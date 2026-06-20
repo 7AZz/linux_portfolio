@@ -57,8 +57,6 @@ const Terminal = () => {
             <span className="text-[#87ac99] font-bold">Packages: </span>
             {techStack.length} (tech-stacks)
           </p>
-         
-          
 
           <div className="pt-2" />
 
